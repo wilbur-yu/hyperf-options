@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 /**
  * This file is part of project wilbur-yu/hyperf-options.
  *
@@ -17,9 +17,10 @@ class ConfigProvider
 {
     public function __invoke(): array
     {
+        $timestamp = date('Y_m_d_His');
         return [
             'listeners'   => [
-                CacheManagerListener::class
+                CacheManagerListener::class,
             ],
             'annotations' => [
                 'scan' => [
@@ -27,6 +28,12 @@ class ConfigProvider
                         __DIR__,
                     ],
                 ],
+            ],
+            'publish'     => [
+                'id'          => 'database',
+                'description' => 'the database migration for hyperf-options',
+                'source'      => __DIR__ . '/../migrations/create_options_table.php',
+                'destination' => BASE_PATH . "/migrations/{$timestamp}_create_options_table.php",
             ],
         ];
     }
