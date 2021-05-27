@@ -1,4 +1,4 @@
-该组件移植于 [appstract/laravel-options](https://github.com/appstract/laravel-options), 
+> 该组件移植于 [appstract/laravel-options](https://github.com/appstract/laravel-options), 
 感谢 [作者](https://github.com/appstract) 的开源作品
 
 # 安装
