@@ -1,0 +1,56 @@
+{
+    "name": "wilbur-yu/hyperf-options",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "hyperf"
+    ],
+    "description": "Global key-value store in the database",
+    "autoload": {
+        "psr-4": {
+            "WilburYu\\HyperfOptions\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "hyperf/cache": "^2.1",
+        "hyperf/database": "^2.1",
+        "hyperf/db-connection": "^2.1",
+        "hyperf/di": "2.1.*",
+        "hyperf/event": "^2.1",
+        "hyperf/http-server": "^2.1"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.14",
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": ">=7.0",
+        "swoole/ide-helper": "dev-master",
+        "swow/swow": "dev-develop",
+        "symfony/var-dumper": "^5.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "WilburYu\\HyperfOptions\\ConfigProvider"
+        }
+    }
+}
