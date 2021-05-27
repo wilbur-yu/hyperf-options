@@ -1,4 +1,7 @@
 /vendor/
+/tests/
 composer.lock
 *.cache
 *.log
+.idea/
+phpunit.xml
