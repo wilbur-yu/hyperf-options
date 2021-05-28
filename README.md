@@ -4,7 +4,9 @@
 # 安装
 
 ```
-composer create-project hyperf/component-creater
+composer require wilbur-yu/hyperf-options
+php ./bin/hyperf.php vendor:publish wilbur-yu/hyperf-options
+php ./bin/hyperf.php migarte
 ```
 # 说明
 ```php
