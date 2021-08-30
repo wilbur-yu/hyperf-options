@@ -42,21 +42,15 @@ class CacheManagerListener implements ListenerInterface
 
     public function process(object $event): void
     {
-        $this->logger->info('进入option cache 监听');
         if (! $event instanceof Event) {
-            $this->logger->info('不是事件');
-
             return;
         }
 
         $model = $event->getModel();
         if (! $model instanceof Option) {
-            $this->logger->info('不是 option 模型');
-
             return;
         }
 
-        $this->logger->info('匹配模型事件');
         if ($event instanceof Saved) {
             $this->option->putCache($model->key, $model->value);
             $this->logger->info('Event ' . Saved::class . ' by ' . __CLASS__ . ' listener.');
