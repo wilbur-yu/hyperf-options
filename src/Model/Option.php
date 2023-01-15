@@ -22,9 +22,9 @@ use Hyperf\DbConnection\Model\Model;
  */
 class Option extends Model
 {
-    protected $table = 'options';
+    protected ?string $table = 'options';
 
-    protected $fillable = [
+    protected array $fillable = [
         'key',
         'value',
         'description',
